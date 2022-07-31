@@ -1,3 +1,2 @@
 # Sankey-Solution-assignment
 Repository of Task 1, Task2 and Task 3
-I've done this project using HTML, CSS JAVASCRIPT.......
