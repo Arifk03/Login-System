@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Data Retrieved Successfully<h1>
+
+        <table id = table >
+
+        </table>
+
+    <script>
+        function load(){
+            console.log('Window Loaded....');
+            fetch("https://run.mocky.io/v3/9b184f9d-bf48-4467-9d8f-137ea0eba817")
+            .then(result => result.json())
+            .then(json => show(json.data) )
+        }
+
+        function show (employee){
+
+            let table = document.getElementById('table');
+            for ( let i =0; i < employee.length; i++){
+
+            let obj = employee[i];
+            console.log(obj);
+            let row = document.createElement('tr');
+            
+            let name = document.createElement('td');
+            let office = document.createElement('td');
+            let position = document.createElement('td');
+            let salary = document.createElement('td');
+
+           
+            name.innerHTML = obj.name
+            office.innerHTML = obj.office
+            position.innerHTML = obj.position
+            salary.innerHTML = obj.salary
+
+            
+            row.appendChild(name)
+            row.appendChild(office)
+            row.appendChild(position)
+            row.appendChild(salary)
+            
+
+            table.appendChild(row)
+
+            }
+        }
+
+
+        window.onload= load
+        </script>
+</body>
+</html>
